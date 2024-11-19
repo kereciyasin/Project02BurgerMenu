@@ -1,0 +1,44 @@
+﻿@model Project02BurgerMenu.Entities.Product
+@{
+    ViewBag.Title = "CreateProduct";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Yeni Ürün Ekle</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Ürün Adı:</label>
+                            @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control", placeholder = "Ürün adını girin" })
+                        </div>
+                        <div class="mb-3">
+                            <label for="productPrice" class="form-label">Ürün Fiyatı:</label>
+                            @Html.TextBoxFor(x => x.ProductPrice, new { @class = "form-control", placeholder = "Ürün fiyatını girin" })
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDescription" class="form-label">Ürün Açıklaması:</label>
+                            @Html.TextBoxFor(x => x.ProductDescription, new { @class = "form-control", placeholder = "Ürün açıklamasını girin" })
+                        </div>
+                        <div class="mb-3">
+                            <label for="imageUrl" class="form-label">Ürün Resmi:</label>
+                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", placeholder = "Resim URL'sini girin" })
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Kategori:</label>
+                            @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success">Ürün Ekle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
