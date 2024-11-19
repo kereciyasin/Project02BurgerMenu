@@ -1,0 +1,54 @@
+﻿@model Project02BurgerMenu.Entities.Admin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Burger Admin Giriş Sayfası</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-secondary">
+
+    <!-- Ekranın ortasında formu konumlandırmak için flexbox kullanıyoruz -->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-lg" style="width: 100%; max-width: 450px; border-radius: 15px;">
+            <div class="card-header text-center bg-primary text-white rounded-top">
+                <h4>Burger Admin Giriş</h4>
+            </div>
+            <div class="card-body p-4">
+                <!-- Bilgilendirme mesajı -->
+                <div class="alert alert-info text-center" role="alert">
+                    Giriş yapmak için kullanıcı adınızı ve şifrenizi girin.
+                </div>
+
+                <!-- Form Başlangıcı -->
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Kullanıcı Adınız:</label>
+                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control form-control-lg", id = "username", placeholder = "Kullanıcı adınızı girin" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Şifreniz:</label>
+                        @Html.PasswordFor(x => x.Password, new { @class = "form-control form-control-lg", id = "password", placeholder = "Şifrenizi girin" })
+                    </div>
+
+                    <!-- Giriş Butonu -->
+                    <button type="submit" class="btn btn-primary w-100 btn-lg shadow-sm">Giriş Yap</button>
+                </form>
+
+                <!-- Alt Bilgi -->
+                <div class="text-center mt-3">
+                    <small>Henüz kaydınız yok mu? <a href="#" class="text-decoration-none text-primary">Kayıt Ol</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Project02BurgerMenu.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         BurgerMenu01Context db = new BurgerMenu01Context();
@@ -47,7 +48,7 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult UpdateProduct(int id)
         {
-            var product = db.Products.Find(id);
+            var value = db.Products.Find(id);
             List<SelectListItem> values = (from x in db.Categories.ToList()
                                            select new SelectListItem
                                            {
@@ -55,7 +56,7 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
                                                Value = x.CategoryId.ToString()
                                            }).ToList();
             ViewBag.v1 = values;
-            return View("EditProduct", product);
+            return View(value);
         }
         [HttpPost]
         public ActionResult UpdateProduct(Product product)

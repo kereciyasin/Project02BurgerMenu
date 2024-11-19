@@ -7,7 +7,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Ürün Listesi Listesi</h4>
+            <h4 class="card-title">Ürün Listesi</h4>
             <p class="card-description">
 
             </p>
@@ -15,11 +15,12 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Kategori ID</th>
+                            <th>Ürün Resmi</th>
+
                             <th>Ürün Adi</th>
                             <th>Ürün Aciklamasi</th>
                             <th>Ürün Fiyati</th>
-                            <th>Ürün Resmi</th>
+
                             <th>Kategori Adi</th>
                             <th>Sil</th>
                             <th>Güncelle</th>
@@ -29,11 +30,10 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.ProductId</td>
+                                <td> <img src="@item.ImageUrl" height="50" width="50" /> </td>
                                 <td>@item.ProductName</td>
                                 <td>@item.ProductDescription</td>
                                 <td>@item.ProductPrice</td>
-                                <td>@item.ImageUrl</td>
                                 <td>@item.Category.CategoryName</td>
                                 <td><a href="/Admin/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a></td>
                                 <td><a href="/Admin/Product/UpdateProduct/@item.ProductId" class="btn btn-success">Güncelle</a></td>
@@ -42,7 +42,7 @@
 
                     </tbody>
                 </table>
-                <a href="#" class="btn btn-primary">Yeni Ürün Girisi</a>
+                <a href="#/Admin/Product/CreateProduct/" class="btn btn-primary">Yeni Ürün Girisi</a>
             </div>
         </div>
     </div>
