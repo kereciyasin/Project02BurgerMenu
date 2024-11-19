@@ -129,14 +129,24 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Content\BurgerMenu01Context.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DealOfTheDay.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Testimonial.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411191633432_mig1.cs" />
+    <Compile Include="Migrations\202411191633432_mig1.Designer.cs">
+      <DependentUpon>202411191633432_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411191723393_mig3.cs" />
+    <Compile Include="Migrations\202411191723393_mig3.Designer.cs">
+      <DependentUpon>202411191723393_mig3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1601,6 +1611,7 @@
     <Content Include="Areas\Admin\Views\AdminLayout\PartialHead.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLayout\PartialNavbar.cshtml" />
     <Content Include="Areas\Admin\Views\AdminLayout\PartialSidebar.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\CategoryList.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -1663,6 +1674,14 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202411191633432_mig1.resx">
+      <DependentUpon>202411191633432_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411191723393_mig3.resx">
+      <DependentUpon>202411191723393_mig3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
