@@ -14,15 +14,32 @@ namespace Project02BurgerMenu.Controllers
             return View();
         }
 
-        public PartialViewResult PartialHead() 
+        public PartialViewResult PartialHead()
         {
             return PartialView();
-
         }
 
         public PartialViewResult PartialNavbar()
         {
             return PartialView();
+        }   
+
+        public PartialViewResult PartialAbout()
+        {
+            return PartialView();
         }
+        public PartialViewResult TodaysOffer() 
+        {
+            return PartialView();   
+        }
+
+        public PartialViewResult PartialMenu()
+        {
+            return PartialView();   
+        }
+        public PartialViewResult PartialGallery() 
+        {
+            return PartialView();
+        }   
     }
 }
