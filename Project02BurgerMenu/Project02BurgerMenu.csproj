@@ -1719,6 +1719,7 @@
     <Content Include="Views\Default\PartialScripts.cshtml" />
     <Content Include="Views\ErrorPage\Index.cshtml" />
     <Content Include="Views\Default\PartialCategory.cshtml" />
+    <Content Include="Views\Default\PartialReservation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

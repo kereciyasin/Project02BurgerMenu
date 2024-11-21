@@ -59,5 +59,9 @@ namespace Project02BurgerMenu.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult PartialReservation()
+        {
+            return PartialView();
+        }
     }
 }
