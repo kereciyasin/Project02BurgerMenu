@@ -22,24 +22,32 @@ namespace Project02BurgerMenu.Controllers
         public PartialViewResult PartialNavbar()
         {
             return PartialView();
-        }   
+        }
 
         public PartialViewResult PartialAbout()
         {
             return PartialView();
         }
-        public PartialViewResult TodaysOffer() 
+        public PartialViewResult TodaysOffer()
         {
-            return PartialView();   
+            return PartialView();
         }
 
         public PartialViewResult PartialMenu()
         {
-            return PartialView();   
+            return PartialView();
         }
-        public PartialViewResult PartialGallery() 
+        public PartialViewResult PartialGallery()
         {
             return PartialView();
-        }   
+        }
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialScripts()
+        {
+            return PartialView();
+        }
     }
 }
