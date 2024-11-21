@@ -8,6 +8,7 @@ using Project02BurgerMenu.Entities;
 
 namespace Project02BurgerMenu.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         BurgerMenu01Context context = new BurgerMenu01Context();

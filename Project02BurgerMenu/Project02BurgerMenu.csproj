@@ -160,6 +160,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="colorlib-error-404-6\css\style.css" />
+    <Content Include="colorlib-error-404-6\index.html" />
+    <Content Include="colorlib-error-404-6\readme.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
