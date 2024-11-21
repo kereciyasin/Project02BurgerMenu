@@ -59,6 +59,12 @@ namespace Project02BurgerMenu.Controllers
         {
             return PartialView();
         }
+        [HttpGet]
+        public PartialViewResult PartialReservation()
+        {
+            return PartialView();
+        }
+
         [HttpPost]
         public PartialViewResult PartialReservation(Reservation reservation)
         {
