@@ -134,6 +134,7 @@
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
     <Compile Include="Content\BurgerMenu01Context.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -1712,6 +1713,7 @@
     <Content Include="Views\Default\PartialGallery.cshtml" />
     <Content Include="Views\Default\PartialFooter.cshtml" />
     <Content Include="Views\Default\PartialScripts.cshtml" />
+    <Content Include="Views\ErrorPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
