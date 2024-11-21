@@ -30,32 +30,34 @@
                 <form method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Kullanıcı Adınız:</label>
-                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control form-control-lg", id = "username", placeholder = "Kullanıcı adınızı girin" })
+                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control", id = "username", placeholder = "Kullanıcı adınızı girin" })
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email Adresi:</label>
-                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control form-control-lg", id = "email", placeholder = "Email Adresi giriniz" })
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "email", placeholder = "Email Adresi giriniz" })
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label"KAdınız:</label>
-                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control form-control-lg", id = "username", placeholder = "Adınızı yazin" })
+                        <label for="name" class="form-label" Adınız:</label>
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", id = "name", placeholder = "Adınızı yazin" })
                     </div>
-
-
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Şifreniz:</label>
-                        @Html.PasswordFor(x => x.Password, new { @class = "form-control form-control-lg", id = "password", placeholder = "Şifrenizi girin" })
-                    </div>
-
-                    <!-- Giriş Butonu -->
-                    <button type="submit" class="btn btn-primary w-100 btn-lg shadow-sm">Kayit ol</button>
-                </form>
-
-                <!-- Alt Bilgi -->
-                <div class="text-center mt-3">
-                    <small>Henüz kaydınız yok mu? <a href="#" class="text-decoration-none text-primary">Kayıt Ol</a></small>
-                </div>
+                    <label for="surname" class="form-label" Adınız:</label>
+                    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", id = "surname", placeholder = "Soyadiniz yazin" })
             </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Şifreniz:</label>
+                @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "password", placeholder = "Şifrenizi girin" })
+            </div>
+
+            <!-- Giriş Butonu -->
+            <button type="submit" class="btn btn-primary w-100 btn-lg shadow-sm">Kayit ol</button>
+            </form>
+
+            <!-- Alt Bilgi -->
+            <div class="text-center mt-3">
+                <small>Henüz kaydınız yok mu? <a href="#" class="text-decoration-none text-primary">Kayıt Ol</a></small>
+            </div>
+        </div>
         </div>
     </div>
 
