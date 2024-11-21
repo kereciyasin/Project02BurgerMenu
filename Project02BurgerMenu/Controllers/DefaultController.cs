@@ -59,8 +59,14 @@ namespace Project02BurgerMenu.Controllers
         {
             return PartialView();
         }
-        public PartialViewResult PartialReservation()
+        [HttpPost]
+        public PartialViewResult PartialReservation(Reservation reservation)
         {
+            reservation.ReservationStatus = "Onay Bekliyor";
+            reservation.PeopleCount = 0;
+            reservation.ReservationDate = DateTime.Now;
+            context.Reservations.Add(reservation);
+            context.SaveChanges();
             return PartialView();
         }
     }

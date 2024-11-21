@@ -142,6 +142,7 @@
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DealOfTheDay.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\Testimonial.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -161,6 +162,10 @@
     <Compile Include="Migrations\202411211439010_add6.cs" />
     <Compile Include="Migrations\202411211439010_add6.Designer.cs">
       <DependentUpon>202411211439010_add6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411211835200_res.cs" />
+    <Compile Include="Migrations\202411211835200_res.Designer.cs">
+      <DependentUpon>202411211835200_res.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1770,6 +1775,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411211439010_add6.resx">
       <DependentUpon>202411211439010_add6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411211835200_res.resx">
+      <DependentUpon>202411211835200_res.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
