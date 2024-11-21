@@ -39,11 +39,12 @@ namespace Project02BurgerMenu.Controllers
 
         public PartialViewResult PartialMenu()
         {
-            return PartialView();
+            var values = context.Products.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialCategory()
         {
-            var values = context.Categories.ToList();
+            var values = context.Categories.Take(5).ToList();
             return PartialView(values);
         }
         public PartialViewResult PartialGallery()
