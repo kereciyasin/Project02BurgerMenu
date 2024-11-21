@@ -9,7 +9,7 @@ namespace Project02BurgerMenu.Controllers
     public class ErrorPageController : Controller
     {
         // GET: ErrorPage
-        public ActionResult Index()
+        public ActionResult Page404()
         {
             return View();
         }
