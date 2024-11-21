@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Project02BurgerMenu.Content;
+using Project02BurgerMenu.Entities;
+
 
 namespace Project02BurgerMenu.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Default
+        BurgerMenu01Context context = new BurgerMenu01Context();
         public ActionResult Index()
         {
             return View();
@@ -30,12 +33,18 @@ namespace Project02BurgerMenu.Controllers
         }
         public PartialViewResult TodaysOffer()
         {
-            return PartialView();
+            var values = context.Products.Where(x => x.DealofTheDay == true).ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult PartialMenu()
         {
             return PartialView();
+        }
+        public PartialViewResult PartialCategory()
+        {
+            var values = context.Categories.ToList();
+            return PartialView(values);
         }
         public PartialViewResult PartialGallery()
         {
