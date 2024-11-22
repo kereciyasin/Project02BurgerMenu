@@ -8,6 +8,7 @@ using Project02BurgerMenu.Content;
 
 namespace Project02BurgerMenu.Areas.Admin.Controllers
 {
+    [Authorize]
     public class MessageController : Controller
     {
         BurgerMenu01Context db = new BurgerMenu01Context();
@@ -33,6 +34,9 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult NewMessage(Message message)
         {
+            var userName = Session["x"];
+            var email = db.Admins.Where(x => x.Username == userName).Select(x => x.Email).FirstOrDefault();
+            message.SenderEmail = email;
             message.IsRead = false;
             message.SendDate = DateTime.Now;
             db.Messages.Add(message);

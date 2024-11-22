@@ -1,15 +1,14 @@
 ﻿@model List<Project02BurgerMenu.Entities.Message>
 @{
-    ViewBag.Title = "InBox";
+    ViewBag.Title = "SendBox";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
-@*//Burada gelen mesajları listeleyeceğiz*@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Gelen Mesajlar Sayfasi</h4>
+            <h4 class="card-title">Giden Mesajlar Sayfası</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -18,7 +17,7 @@
                             <th>Gönderici</th>
                             <th>Konu</th>
                             <th>Tarih</th>
-                            <th>Mesaji Ac</th>
+                            <th>Mesajı Aç</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,19 +26,18 @@
                             count++;
                             <tr>
                                 <td>@count</td>
-                                <td>@item.SenderEmail</td>
+                                <td>@item.ReceiverEmail</td>
                                 <td>@item.Title</td>
                                 <td>@item.SendDate.ToShortDateString()</td>
                                 <td>
-                                    <a href="" class="btn btn-primary">Mesaji Ac</a>
+                                    <a href="#" class="btn btn-primary">Mesajı Aç</a>
                                 </td>
                             </tr>
                         }
+                    </tbody>
                 </table>
-                <a href="/Admin/Message/NewMessage/" class="btn btn-info">Yeni Mesaj Gönderin..</a>
+                <a href="/Message/NewMessage/" class="btn btn-info">Yeni Mesaj Gönderin..</a>
             </div>
         </div>
     </div>
 </div>
-
-

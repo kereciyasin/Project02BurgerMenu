@@ -1,0 +1,46 @@
+﻿@model List<Project02BurgerMenu.Entities.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımızda</h4>
+            <p class="card-description">
+            </p>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Hakkımızda ID</th>
+                            <th>Üst Başlık</th>
+                            <th>Başlık</th>
+                            <th>Açıklama</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.AboutId</td>
+                                <td>@item.AboutTitle</td>
+                                <td>@item.Title</td>
+                                <td>@item.AboutDescription</td>
+                                <td><a href="/Admin/About/DeleteAbout/@item.AboutId" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/Admin/About/UpdateAbout/@item.AboutId" class="btn btn-success">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <a href="/Admin/About/AddAbout/" class="btn btn-primary">Yeni Hakkımızda Ekle</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+

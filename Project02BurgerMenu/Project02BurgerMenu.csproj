@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DealOfTheDay.cs" />
@@ -172,6 +174,14 @@
     <Compile Include="Migrations\202411220915151_mes.cs" />
     <Compile Include="Migrations\202411220915151_mes.Designer.cs">
       <DependentUpon>202411220915151_mes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411221447291_about.cs" />
+    <Compile Include="Migrations\202411221447291_about.Designer.cs">
+      <DependentUpon>202411221447291_about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411221508135_abt.cs" />
+    <Compile Include="Migrations\202411221508135_abt.Designer.cs">
+      <DependentUpon>202411221508135_abt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1693,6 +1703,11 @@
     <Content Include="eatwell-master\prepros-6.config" />
     <Content Include="eatwell-master\scss\style.scss" />
     <Content Include="Areas\Admin\Views\Message\InBox.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\SendBox.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\NewMessage.cshtml" />
+    <Content Include="Areas\Admin\Views\About\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\About\AddAbout.cshtml" />
+    <Content Include="Areas\Admin\Views\About\UpdateAbout.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -1788,6 +1803,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411220915151_mes.resx">
       <DependentUpon>202411220915151_mes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411221447291_about.resx">
+      <DependentUpon>202411221447291_about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411221508135_abt.resx">
+      <DependentUpon>202411221508135_abt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
