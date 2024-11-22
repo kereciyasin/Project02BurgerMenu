@@ -130,6 +130,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
     <Compile Include="Content\BurgerMenu01Context.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\DealOfTheDay.cs" />
+    <Compile Include="Entities\Message.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Entities\Testimonial.cs" />
@@ -166,6 +168,10 @@
     <Compile Include="Migrations\202411211835200_res.cs" />
     <Compile Include="Migrations\202411211835200_res.Designer.cs">
       <DependentUpon>202411211835200_res.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411220915151_mes.cs" />
+    <Compile Include="Migrations\202411220915151_mes.Designer.cs">
+      <DependentUpon>202411220915151_mes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1729,6 +1735,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Message\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="regal\regal\.git\objects\info\" />
@@ -1778,6 +1785,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411211835200_res.resx">
       <DependentUpon>202411211835200_res.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411220915151_mes.resx">
+      <DependentUpon>202411220915151_mes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
