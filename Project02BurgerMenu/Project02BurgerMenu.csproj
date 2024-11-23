@@ -144,6 +144,7 @@
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\DealOfTheDay.cs" />
     <Compile Include="Entities\Message.cs" />
     <Compile Include="Entities\Product.cs" />
@@ -183,6 +184,10 @@
     <Compile Include="Migrations\202411221508135_abt.cs" />
     <Compile Include="Migrations\202411221508135_abt.Designer.cs">
       <DependentUpon>202411221508135_abt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411231851075_contact.cs" />
+    <Compile Include="Migrations\202411231851075_contact.Designer.cs">
+      <DependentUpon>202411231851075_contact.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1814,6 +1819,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411221508135_abt.resx">
       <DependentUpon>202411221508135_abt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411231851075_contact.resx">
+      <DependentUpon>202411231851075_contact.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
