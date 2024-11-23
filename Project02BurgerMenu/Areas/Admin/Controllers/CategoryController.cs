@@ -39,13 +39,13 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
             return RedirectToAction("CategoryList");
         }
         [HttpGet]
-        public ActionResult EditCategory(int id)
+        public ActionResult UpdateCategory(int id)
         {
             var category = db.Categories.Find(id);
-            return View("EditCategory", category);
+            return View(category);
         }
         [HttpPost]
-        public ActionResult EditCategory(Category category)
+        public ActionResult UpdateCategory(Category category)
         {
             var values = db.Categories.Find(category.CategoryId);
             values.CategoryName = category.CategoryName;

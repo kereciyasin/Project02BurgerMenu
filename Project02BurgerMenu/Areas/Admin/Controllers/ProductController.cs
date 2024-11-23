@@ -71,5 +71,12 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
             return RedirectToAction("ProductList");
         }
 
+        //categoryproducts
+        public ActionResult CategoryProduct(int id)
+        {
+            var values = db.Products.Where(x => x.CategoryId == id).ToList();
+            return View(values);
+        }
+
     }
 }
