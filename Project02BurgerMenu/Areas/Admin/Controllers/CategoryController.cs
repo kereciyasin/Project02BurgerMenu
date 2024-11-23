@@ -38,5 +38,19 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("CategoryList");
         }
+        [HttpGet]
+        public ActionResult EditCategory(int id)
+        {
+            var category = db.Categories.Find(id);
+            return View("EditCategory", category);
+        }
+        [HttpPost]
+        public ActionResult EditCategory(Category category)
+        {
+            var values = db.Categories.Find(category.CategoryId);
+            values.CategoryName = category.CategoryName;
+            db.SaveChanges();
+            return RedirectToAction("CategoryList");
+        }
     }
 }
