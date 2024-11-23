@@ -29,14 +29,14 @@
                                 <td>@item.CategoryId</td>
                                 <td>@item.CategoryName</td>
                                 <td><a href="#" class="btn btn-warning">Kategori Ürünkeri</a></td>
-                                <td><a href="#" class="btn btn-danger">Sil</a></td>
+                                <td><a href="/Admin/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
                                 <td><a href="#" class="btn btn-success">Güncelle</a></td>
                             </tr>
                         }
 
                     </tbody>
                 </table>
-                <a href="/Admin/Product/CreateProduct/" class="btn btn-primary">Yeni Kategori Girisi</a>
+                <a href="/Admin/Category/AddCategory/" class="btn btn-primary">Yeni Kategori Girisi</a>
             </div>
         </div>
     </div>
