@@ -1724,6 +1724,7 @@
     <Content Include="Areas\Admin\Views\Category\UpdateCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Chart\ProductStockChart.cshtml" />
     <Content Include="Areas\Admin\Views\Contact\Inbox.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\DetailMessage.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
