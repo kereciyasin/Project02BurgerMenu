@@ -17,6 +17,6 @@ namespace Project02BurgerMenu.Entities
         public string Phone { get; set; }
         public string Email { get; set; }
         public string MapLocation { get; set; }
-        public string About1 { get; internal set; }
+        
     }
 }

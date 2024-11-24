@@ -132,6 +132,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminLayoutController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ChartController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
@@ -188,6 +189,10 @@
     <Compile Include="Migrations\202411231851075_contact.cs" />
     <Compile Include="Migrations\202411231851075_contact.Designer.cs">
       <DependentUpon>202411231851075_contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411241119339_con1.cs" />
+    <Compile Include="Migrations\202411241119339_con1.Designer.cs">
+      <DependentUpon>202411241119339_con1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1718,6 +1723,7 @@
     <Content Include="Areas\Admin\Views\Category\AddCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Category\UpdateCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Chart\ProductStockChart.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Inbox.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -1822,6 +1828,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411231851075_contact.resx">
       <DependentUpon>202411231851075_contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411241119339_con1.resx">
+      <DependentUpon>202411241119339_con1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
