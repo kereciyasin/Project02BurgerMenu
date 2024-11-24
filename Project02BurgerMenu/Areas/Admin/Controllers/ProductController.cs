@@ -1,4 +1,5 @@
-﻿using Project02BurgerMenu.Content;
+﻿using Microsoft.Ajax.Utilities;
+using Project02BurgerMenu.Content;
 using Project02BurgerMenu.Entities;
 using System;
 using System.Collections.Generic;
@@ -76,6 +77,20 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
         {
             var values = db.Products.Where(x => x.CategoryId == id).ToList();
             return View(values);
+        }
+        public ActionResult DealofTheDayChangeToTrue(int id)
+        {
+            var values = db.Products.Where(x => x.ProductId == id).FirstOrDefault();
+            values.DealofTheDay = true;
+            db.SaveChanges();
+            return RedirectToAction("ProductList");
+        }
+        public ActionResult DealofTheDayChangeToFalse(int id)
+        {
+            var values = db.Products.Where(x => x.ProductId == id).FirstOrDefault();
+            values.DealofTheDay = false;
+            db.SaveChanges();
+            return RedirectToAction("ProductList");
         }
 
     }
