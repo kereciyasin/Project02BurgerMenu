@@ -142,6 +142,7 @@
     <Compile Include="Areas\Admin\Controllers\MessageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReservationController.cs" />
     <Compile Include="Content\BurgerMenu01Context.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
@@ -1734,6 +1735,7 @@
     <Content Include="Areas\Admin\Views\Contact\DetailMessage.cshtml" />
     <Content Include="Areas\Admin\Views\Product\CategoryProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Message\PartialMessageDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Reservation\ReservationList.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
