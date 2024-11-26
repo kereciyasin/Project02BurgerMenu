@@ -18,5 +18,42 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
             var values = context.Reservations.ToList().ToPagedList(page, 5);   
             return View(values);
         }
+        [HttpGet]
+        public ActionResult DetailReservation(int id)
+        {
+            var values = context.Reservations.Where(x => x.ReservationId == id).FirstOrDefault();
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult DetailReservation(Reservation r)
+        {
+            var values = context.Reservations.Find(r.ReservationId);    
+            values.ReservationId = r.ReservationId;
+            values.Name = r.Name;
+            values.Surname = r.Surname;
+            values.Email = r.Email;
+            values.Phone = r.Phone;
+            values.ReservationDate = r.ReservationDate;
+            values.Time = r.Time;
+            values.PeopleCount = r.PeopleCount; 
+            values.Message = r.Message;
+            context.SaveChanges();
+            return RedirectToAction("ReservationList");
+        }
+        public ActionResult DeleteReservation(int id)
+        {
+            var values = context.Reservations.Find(id);
+            context.Reservations.Remove(values);
+            context.SaveChanges();
+            return RedirectToAction("ReservationList");
+        }
+        public ActionResult StatusChangeToConfirm(int id) 
+        {
+            var values = context.Reservations.Where(x => x.ReservationId == id).FirstOrDefault();
+            values.ReservationStatus = "Onaylandi";
+            context.SaveChanges();
+            return RedirectToAction("ReservationList");
+
+        }
     }
 }
