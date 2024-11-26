@@ -1726,6 +1726,7 @@
     <Content Include="Areas\Admin\Views\Contact\Inbox.cshtml" />
     <Content Include="Areas\Admin\Views\Contact\DetailMessage.cshtml" />
     <Content Include="Areas\Admin\Views\Product\CategoryProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\Message\PartialMessageDetail.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

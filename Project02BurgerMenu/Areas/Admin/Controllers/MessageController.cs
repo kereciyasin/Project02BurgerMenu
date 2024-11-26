@@ -26,6 +26,11 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
             var messages = db.Messages.Where(x => x.SenderEmail == email).ToList();
             return View(messages);
         }
+        public PartialViewResult PartialMessageDetail(int id)
+        {
+            var message = db.Messages.Find(id);
+            return PartialView(message);
+        }
         [HttpGet]
         public ActionResult NewMessage()
         {
