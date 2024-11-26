@@ -1,11 +1,10 @@
-﻿using Microsoft.Ajax.Utilities;
-using Project02BurgerMenu.Content;
+﻿using Project02BurgerMenu.Content;
 using Project02BurgerMenu.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using PagedList;
+
 
 namespace Project02BurgerMenu.Areas.Admin.Controllers
 {
@@ -13,9 +12,9 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         BurgerMenu01Context db = new BurgerMenu01Context();
-        public ActionResult ProductList()
+        public ActionResult ProductList(int page = 1)
         {
-            var productList = db.Products.ToList();
+            var productList = db.Products.ToList().ToPagedList(page, 10);
             return View(productList);
         }
         [HttpGet]
