@@ -55,5 +55,26 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
             return RedirectToAction("ReservationList");
 
         }
+        public ActionResult StatusChangeToCancel(int id)
+        {
+            var values = context.Reservations.Where(x => x.ReservationId == id).FirstOrDefault();
+            values.ReservationStatus = "Iptal Edildi";
+            context.SaveChanges();
+            return RedirectToAction("ReservationList");
+        }
+        public ActionResult StatusChangeToWaiting(int id)
+        {
+            var values = context.Reservations.Where(x => x.ReservationId == id).FirstOrDefault();
+            values.ReservationStatus = "Beklemede";
+            context.SaveChanges();
+            return RedirectToAction("ReservationList");
+        }
+        public ActionResult StatusChangeToCome(int id)
+        {
+            var values = context.Reservations.Where(x => x.ReservationId == id).FirstOrDefault();
+            values.ReservationStatus = "Müsteri Gelmedi";
+            context.SaveChanges();
+            return RedirectToAction("ReservationList");
+        }
     }
 }
