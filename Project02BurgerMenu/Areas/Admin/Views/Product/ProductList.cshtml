@@ -1,4 +1,8 @@
-﻿@model List<Project02BurgerMenu.Entities.Product>
+﻿﻿@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Project02BurgerMenu.Entities.Product>
+
+
 @{
     ViewBag.Title = "ProductList";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
