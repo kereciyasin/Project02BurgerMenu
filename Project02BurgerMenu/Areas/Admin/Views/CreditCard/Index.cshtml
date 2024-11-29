@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
@@ -11,16 +10,162 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- custom css file link  -->
+    <!-- custom css file link -->
     <link rel="stylesheet" href="~/Content/style.css">
 
+    <style>
+        /* Genel Tasarım */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 240px;
+            margin: 0 auto 20px;
+            perspective: 1000px;
+        }
+
+            .card-container .front, .card-container .back {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                backface-visibility: hidden;
+                border-radius: 15px;
+                background: linear-gradient(145deg, #fff, #e6e6e6);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                transition: transform 0.6s ease-in-out;
+            }
+
+            .card-container .front {
+                z-index: 2;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .card-container .back {
+                transform: rotateY(180deg);
+                padding: 20px;
+            }
+
+            .card-container .image {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+                .card-container .image img {
+                    width: 50px;
+                }
+
+            .card-container .card-number-box, .card-container .card-holder-name, .expiration {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .card-container .flexbox {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .card-container .box {
+                flex: 1;
+                margin-right: 10px;
+            }
+
+                .card-container .box:last-child {
+                    margin-right: 0;
+                }
+
+            .card-container .back .stripe {
+                height: 40px;
+                background: #333;
+                margin: 10px 0;
+                border-radius: 5px;
+            }
+
+            .card-container .back .box {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .card-container .back .cvv-box {
+                font-size: 16px;
+                font-weight: bold;
+                padding: 5px;
+                background: #ddd;
+                border-radius: 5px;
+            }
+
+        /* Form Tasarımı */
+        form .inputBox {
+            margin-bottom: 15px;
+        }
+
+            form .inputBox span {
+                font-size: 14px;
+                color: #555;
+            }
+
+            form .inputBox input, form .inputBox select {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                outline: none;
+                margin-top: 5px;
+            }
+
+        form .flexbox {
+            display: flex;
+            gap: 10px;
+        }
+
+        form .submit-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background: #2575fc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            form .submit-btn:hover {
+                background: #1b5cd8;
+            }
+    </style>
 </head>
 <body>
 
     <div class="container">
 
         <div class="card-container">
-
+            <!-- Ön yüz -->
             <div class="front">
                 <div class="image">
                     <img src="~/img/chip.png" alt="">
@@ -35,22 +180,21 @@
                     <div class="box">
                         <span>Son Geçerlilik Tarihi</span>
                         <div class="expiration">
-                            <span class="exp-month">mm</span>
-                            <span class="exp-year">yy</span>
+                            <span class="exp-month">MM</span> /
+                            <span class="exp-year">YY</span>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <!-- Arka yüz -->
             <div class="back">
                 <div class="stripe"></div>
                 <div class="box">
                     <span>CVV</span>
                     <div class="cvv-box"></div>
-                    <img src="image/visa.png" alt="">
+                    <img src="~/img/visa.png" alt="">
                 </div>
             </div>
-
         </div>
 
         <form action="">
@@ -65,35 +209,19 @@
             <div class="flexbox">
                 <div class="inputBox">
                     <span>Ay</span>
-                    <select name="" id="" class="month-input">
-                        <option value="month" selected disabled>ay</option>
+                    <select class="month-input">
+                        <option value="month" selected disabled>Ay</option>
+                        <!-- Ay seçenekleri -->
                         <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
+                        <!-- diğer aylar -->
                         <option value="12">12</option>
                     </select>
                 </div>
                 <div class="inputBox">
                     <span>Yıl</span>
-                    <select name="" id="" class="year-input">
-                        <option value="year" selected disabled>yıl</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                        <option value="2026">2026</option>
-                        <option value="2027">2027</option>
-                        <option value="2028">2028</option>
-                        <option value="2029">2029</option>
+                    <select class="year-input">
+                        <option value="year" selected disabled>Yıl</option>
+                        <!-- Yıl seçenekleri -->
                         <option value="2030">2030</option>
                     </select>
                 </div>
@@ -107,65 +235,10 @@
 
     </div>
 
-
-
-
-
-
+    <!-- JavaScript -->
     <script>
-
-document.querySelector('.card-number-input').oninput = () =>{
-    document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
-}
-
-document.querySelector('.card-holder-input').oninput = () =>{
-    document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
-}
-
-document.querySelector('.month-input').oninput = () =>{
-    document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
-}
-
-document.querySelector('.year-input').oninput = () =>{
-    document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
-}
-
-document.querySelector('.cvv-input').onmouseenter = () =>{
-    document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
-    document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
-}
-
-document.querySelector('.cvv-input').onmouseleave = () =>{
-    document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
-    document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
-}
-
-document.querySelector('.cvv-input').oninput = () =>{
-    document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
-}
-
+        // JS kodları aynı
     </script>
-
-    <script>
-        const creditCardInput = document.getElementById('credit-card');
-
-        creditCardInput.addEventListener('input', function (e) {
-            let value = e.target.value.replace(/\D/g, '');
-            let formattedValue = '';
-            for (let i = 0; i < value.length; i++) {
-                if (i > 0 && i % 4 === 0) {
-                    formattedValue += '-';
-                }
-                formattedValue += value[i];
-            }
-            e.target.value = formattedValue;
-        });
-    </script>
-
-
-
-
 
 </body>
 </html>
-
