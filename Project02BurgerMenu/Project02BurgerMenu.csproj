@@ -206,6 +206,10 @@
     <Compile Include="Migrations\202411241119339_con1.Designer.cs">
       <DependentUpon>202411241119339_con1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411292330518_subs.cs" />
+    <Compile Include="Migrations\202411292330518_subs.Designer.cs">
+      <DependentUpon>202411292330518_subs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1854,6 +1858,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411241119339_con1.resx">
       <DependentUpon>202411241119339_con1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411292330518_subs.resx">
+      <DependentUpon>202411292330518_subs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
