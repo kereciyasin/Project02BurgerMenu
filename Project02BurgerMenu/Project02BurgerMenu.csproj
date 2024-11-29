@@ -1749,6 +1749,7 @@
     <Content Include="Areas\Admin\Views\CreditCard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Statistics\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -1793,7 +1794,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Areas\Admin\Views\Statistics\" />
     <Folder Include="Models\" />
     <Folder Include="regal\regal\.git\objects\info\" />
     <Folder Include="regal\regal\.git\objects\pack\" />
