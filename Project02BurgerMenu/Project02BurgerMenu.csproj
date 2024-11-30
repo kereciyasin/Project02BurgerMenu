@@ -1747,9 +1747,9 @@
     <Content Include="Areas\Admin\Views\Reservation\ReservationList.cshtml" />
     <Content Include="Areas\Admin\Views\Reservation\DetailReservation.cshtml" />
     <Content Include="Areas\Admin\Views\CreditCard\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Statistics\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />

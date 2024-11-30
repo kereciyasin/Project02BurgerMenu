@@ -1,4 +1,15 @@
-﻿<nav class="sidebar sidebar-offcanvas" id="sidebar">
+﻿<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<style>
+    .menu-icon {
+        display: inline-block;
+        font-size: 16px;
+        color: #fff;
+        margin-right: 8px;
+    }
+</style>
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="user-profile">
         <div class="user-image">
             <img src="~/regal/regal/images/faces/face28.png">
@@ -7,87 +18,82 @@
             Yasin Kereci
         </div>
         <div class="user-designation">
-           Yazilim Gelistirici
+            Yazilim Gelistirici
         </div>
     </div>
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
-                <i class="icon-box menu-icon"></i>
+            <a class="nav-link" href="/Admin/Dashboard/Index">
+                <i class="fas fa-home menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="/Admin/Category/CategoryList">
-                <i class="icon-file menu-icon"></i>
+                <i class="fas fa-list menu-icon"></i>
                 <span class="menu-title">Kategoriler</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/Admin/Product/ProductList">
-                <i class="icon-pie-graph menu-icon"></i>
+                <i class="fas fa-tag menu-icon"></i>
                 <span class="menu-title">Ürünler</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/Admin/Reservation/ReservationList"">
-                <i class="icon-command menu-icon"></i>
+            <a class="nav-link" href="/Admin/Reservation/ReservationList">
+                <i class="fas fa-calendar-alt menu-icon"></i>
                 <span class="menu-title">Rezervasyonlar</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/Admin/Message/InBox">
-                <i class="icon-help menu-icon"></i>
+                <i class="fas fa-envelope menu-icon"></i>
                 <span class="menu-title">Mesajlar</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/Admin/About/Index">
-                <i class="icon-help menu-icon"></i>
+                <i class="fas fa-info-circle menu-icon"></i>
                 <span class="menu-title">Hakkimizda</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/regal/regal/pages/icons/feather-icons.html">
-                <i class="icon-help menu-icon"></i>
+            <a class="nav-link" href="/Admin/Contact/Inbox">
+                <i class="fas fa-users menu-icon"></i>
                 <span class="menu-title">Referanslar</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/regal/regal/pages/icons/feather-icons.html">
-                <i class="icon-help menu-icon"></i>
+            <a class="nav-link" href="/Admin/Chart/ProductStockChart">
+                <i class="fas fa-chart-bar menu-icon"></i>
+                <span class="menu-title">Grafikler</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Statistics/Index">
+                <i class="fas fa-chart-line menu-icon"></i>
                 <span class="menu-title">Istatistikler</span>
             </a>
         </li>
+
         <li class="nav-item">
-            <a class="nav-link" href="~/regal/regal/pages/icons/feather-icons.html">
-                <i class="icon-help menu-icon"></i>
-                <span class="menu-title">Raporlar</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="~/regal/regal/pages/icons/feather-icons.html">
-                <i class="icon-help menu-icon"></i>
+            <a class="nav-link" href="/Admin/CreditCard/Index">
+                <i class="fas fa-credit-card menu-icon"></i>
                 <span class="menu-title">Kredi Karti</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/regal/regal/pages/icons/feather-icons.html">
-                <i class="icon-help menu-icon"></i>
+            <a class="nav-link" href="/Admin/Settings/Index">
+                <i class="fas fa-cogs menu-icon"></i>
                 <span class="menu-title">Ayarlar</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/regal/regal/pages/icons/feather-icons.html">
-                <i class="icon-help menu-icon"></i>
+            <a class="nav-link" href="@Url.Action("LogOut", "Login", new { area = "" })">
+                <i class="fas fa-sign-out-alt menu-icon"></i>
                 <span class="menu-title">Cikis Yap</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="../../docs/documentation.html">
-                <i class="icon-book menu-icon"></i>
-                <span class="menu-title">Documentation</span>
             </a>
         </li>
     </ul>
