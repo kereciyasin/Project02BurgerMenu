@@ -16,6 +16,15 @@ namespace Project02BurgerMenu.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Index(Contact contact)
+        {
+            contact.SendDate = DateTime.Now;
+            contact.IsRead = false;
+            context.Contacts.Add(contact);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         public PartialViewResult PartialHead()
         {
@@ -29,7 +38,8 @@ namespace Project02BurgerMenu.Controllers
 
         public PartialViewResult PartialAbout()
         {
-            return PartialView();
+            var values = context.Abouts.ToList();
+            return PartialView(values);
         }
         public PartialViewResult TodaysOffer()
         {
@@ -49,12 +59,29 @@ namespace Project02BurgerMenu.Controllers
         }
         public PartialViewResult PartialGallery()
         {
+            var products = context.Products.Take(6).ToList();
             return PartialView();
         }
         public PartialViewResult PartialFooter()
         {
+            ViewBag.description = context.Abouts.Select(x => x.AboutDescription).FirstOrDefault();
             return PartialView();
         }
+
+        [HttpPost]
+        public ActionResult PartialSubscribe(Subscribe subscribe)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Subscribes.Add(subscribe);
+                context.SaveChanges();
+
+                return RedirectToAction("Index", "Default");
+            }
+
+            return PartialView();
+        }
+
         public PartialViewResult PartialScripts()
         {
             return PartialView();
