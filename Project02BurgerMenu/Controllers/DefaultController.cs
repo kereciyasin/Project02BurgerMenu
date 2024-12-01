@@ -63,5 +63,14 @@ namespace Project02BurgerMenu.Controllers
             var values = context.Categories.Take(6).ToList();
             return PartialView("PartialCategory", values);
         }
+        public PartialViewResult PartialGallery()
+        {
+            var values = context.Products.Take(6).ToList(); 
+            return PartialView(values); 
+        }
+        public PartialViewResult PartialFooter()
+        {
+            return PartialView();
+        }   
     }
 }
