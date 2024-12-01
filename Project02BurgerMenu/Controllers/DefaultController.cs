@@ -70,7 +70,37 @@ namespace Project02BurgerMenu.Controllers
         }
         public PartialViewResult PartialFooter()
         {
+            ViewBag.description = context.Abouts.Select(x => x.AboutDescription).FirstOrDefault();   
             return PartialView();
-        }   
+        }
+        [HttpPost]
+        public ActionResult PartialSubscribe(Subscribe subscriber)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Subscribes.Add(subscriber);
+                context.SaveChanges();
+                return RedirectToAction("Index", "Default");
+            }
+            return PartialView();
+        }
+        public PartialViewResult PartialScript()
+        {
+            return PartialView();   
+        }
+        [HttpGet]
+        public PartialViewResult PartialReservation()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult PartialReservation(Reservation reservation)
+        {
+            reservation.ReservationStatus = "Onay Bekliyor";
+            reservation.ReservationDate = DateTime.Now;
+            context.Reservations.Add(reservation);
+            context.SaveChanges();
+            return PartialView();
+        }
     }
 }

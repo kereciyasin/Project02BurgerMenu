@@ -1788,6 +1788,9 @@
     <Content Include="Views\Default\PartialMenu.cshtml" />
     <Content Include="Views\Default\PartialCategory.cshtml" />
     <Content Include="Views\Default\PartialGallery.cshtml" />
+    <Content Include="Views\Default\PartialFooter.cshtml" />
+    <Content Include="Views\Default\PartialScript.cshtml" />
+    <Content Include="Views\Default\PartialReservation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
