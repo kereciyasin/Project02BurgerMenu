@@ -25,23 +25,43 @@ namespace Project02BurgerMenu.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult PartialHead()
+        public PartialViewResult PartialHead()
         {
             return PartialView();
         }
-        public ActionResult PartialNavbar()
+        public PartialViewResult PartialNavbar()
         {
             return PartialView();
         }
-        public ActionResult PartialAbout()
+        public PartialViewResult PartialAbout()
         {
             var values = context.Abouts.ToList();
             return PartialView(values);
         }
-        public ActionResult PartialServices()
+        public PartialViewResult PartialContact()
         {
-            var values = context.Services.ToList();
+            var values = context.Abouts.ToList();
             return PartialView(values);
+        }
+        public PartialViewResult PartialLocation()
+        {
+            ViewBag.mapLocation = context.Abouts.Select(x => x.MapLocation).FirstOrDefault();
+            return PartialView();
+        }
+        public PartialViewResult PartialTodaysOffer()
+        {
+            var values = context.Products.Where(x => x.DealofTheDay == true).ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialMenu()
+        {
+            var values = context.Products.ToList();
+            return PartialView("PartialMenu", values);
+        }
+        public PartialViewResult PartialCategory()
+        {
+            var values = context.Categories.Take(6).ToList();
+            return PartialView("PartialCategory", values);
         }
     }
 }

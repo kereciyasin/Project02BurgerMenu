@@ -1782,6 +1782,11 @@
     <Content Include="Views\Default\PartialHead.cshtml" />
     <Content Include="Views\Default\PartialNavbar.cshtml" />
     <Content Include="Views\Default\PartialAbout.cshtml" />
+    <Content Include="Views\Default\PartialContact.cshtml" />
+    <Content Include="Views\Default\PartialLocation.cshtml" />
+    <Content Include="Views\Default\PartialTodaysOffer.cshtml" />
+    <Content Include="Views\Default\PartialMenu.cshtml" />
+    <Content Include="Views\Default\PartialCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
