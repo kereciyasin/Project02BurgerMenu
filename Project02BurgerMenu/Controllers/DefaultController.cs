@@ -41,6 +41,16 @@ namespace Project02BurgerMenu.Controllers
             var values = context.Abouts.ToList();
             return PartialView(values);
         }
+        public PartialViewResult PartialContact()
+        {
+            var values = context.Abouts.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialLocation()
+        {
+            ViewBag.mapLocation = context.Abouts.Select(x => x.MapLocation).FirstOrDefault();
+            return PartialView();
+        }
         public PartialViewResult TodaysOffer()
         {
             var values = context.Products.Where(x => x.DealofTheDay == true).ToList();

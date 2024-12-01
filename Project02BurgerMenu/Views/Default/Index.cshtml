@@ -5,8 +5,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 @Html.Action("PartialHead", "Default")
+
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     @Html.Action("PartialNavbar", "Default")
     <!-- END section -->
@@ -33,7 +36,7 @@
                     <h2 class="display-4">Get In Touch</h2>
                     <div class="row justify-content-center">
                         <div class="col-md-7">
-                            <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <p class="lead"></p>
                         </div>
                     </div>
                 </div>
@@ -57,22 +60,12 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-4 site-animate">
-                    <p><img src="images/about_img_1.jpg" alt="" class="img-fluid"></p>
-                    <p class="text-black">
-                        Address: <br> 121 Street, Melbourne Victoria <br> 3000 Australia <br> <br>
-                        Phone: <br> 90 987 65 44 <br> <br>
-                        Email: <br> <a href="mailto:info@yoursite.com">info@yoursite.com</a>
-                    </p>
-
-                </div>
+                @Html.Action("PartialContact", "Default")
 
             </div>
         </div>
     </section>
-    <div id="map"></div>
-    <!-- END section -->
+    @Html.Action("PartialLocation", "Default")
 
 
     @Html.Action("PartialFooter", "Default")
@@ -85,6 +78,7 @@
 
     <!-- END Modal -->
     <!-- loader -->
+    <div id="site-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
     @Html.Action("PartialScripts", "Default")
 
 
