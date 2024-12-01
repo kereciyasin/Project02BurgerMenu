@@ -1777,20 +1777,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\PartialHead.cshtml" />
     <Content Include="Views\Default\PartialNavbar.cshtml" />
     <Content Include="Views\Default\PartialAbout.cshtml" />
-    <Content Include="Views\Default\TodaysOffer.cshtml" />
-    <Content Include="Views\Default\PartialMenu.cshtml" />
-    <Content Include="Views\Default\PartialGallery.cshtml" />
-    <Content Include="Views\Default\PartialFooter.cshtml" />
-    <Content Include="Views\Default\PartialScripts.cshtml" />
-    <Content Include="Views\Default\PartialCategory.cshtml" />
-    <Content Include="Views\Default\PartialReservation.cshtml" />
-    <Content Include="Views\ErrorPage\Page404.cshtml" />
-    <Content Include="Views\Default\PartialContact.cshtml" />
-    <Content Include="Views\Default\PartialLocation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿﻿@{
     Layout = null;
 }
 
@@ -9,31 +8,26 @@
 @Html.Action("PartialHead", "Default")
 
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    @Html.Action("PartialNavbar", "Default")
-    <!-- END section -->
+
+
+    @Html.Action("PartialNavBar", "Default")
 
     @Html.Action("PartialAbout", "Default")
-    <!-- END section -->
 
-    @Html.Action("TodaysOffer", "Default")
-
-    <!-- END section -->
+    @Html.Action("PartialTodaysOffer", "Default")
 
     @Html.Action("PartialMenu", "Default")
-    <!-- END section -->
 
 
     @Html.Action("PartialGallery", "Default")
-    <!-- END section -->
 
     <section class="site-section bg-light" id="section-contact">
         <div class="container">
             <div class="row">
 
                 <div class="col-md-12 text-center mb-5 site-animate">
-                    <h2 class="display-4">Get In Touch</h2>
+                    <h2 class="display-4">Bizimle İletişime Geçin</h2>
                     <div class="row justify-content-center">
                         <div class="col-md-7">
                             <p class="lead"></p>
@@ -45,18 +39,18 @@
                     <form action="" method="post">
                         <div class="form-group">
                             <label for="name" class="sr-only">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <input type="text" class="form-control" id="name" name="Name" placeholder="Adınız">
                         </div>
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="Email">
+                            <input type="text" class="form-control" id="email" name="Email" placeholder="Email Adresiniz">
                         </div>
                         <div class="form-group">
                             <label for="message" class="sr-only">Message</label>
-                            <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Write your message"></textarea>
+                            <textarea name="MessageDetail" id="message" cols="30" rows="10" class="form-control" placeholder="Mesajınız"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary btn-lg" value="Send Message">
+                            <input type="submit" class="btn btn-primary btn-lg" value="Gönder">
                         </div>
                     </form>
                 </div>
@@ -65,23 +59,19 @@
             </div>
         </div>
     </section>
-    @Html.Action("PartialLocation", "Default")
 
+    @Html.Action("PartialLocation", "Default")
 
     @Html.Action("PartialFooter", "Default")
 
-
-
-
     <!-- Modal -->
     @Html.Action("PartialReservation", "Default")
-
     <!-- END Modal -->
     <!-- loader -->
     <div id="site-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-    @Html.Action("PartialScripts", "Default")
 
+    @Html.Action("PartialScript", "Default")
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
