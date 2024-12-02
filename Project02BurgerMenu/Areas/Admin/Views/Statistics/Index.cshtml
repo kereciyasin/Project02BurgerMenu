@@ -1,11 +1,10 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
 <style>
-    /* Ana Kart Stili */
+    /* Main Card Style */
     .card {
         height: 170px;
         border-radius: 15px;
@@ -14,28 +13,28 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-        /* Kart Hover Efekti */
+        /* Card Hover Effect */
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-    /* Kart Başlık Stili */
+    /* Card Title Style */
     .card-title {
         font-size: 1.2rem;
         font-weight: 600;
         margin-bottom: 10px;
-        color: #4a5568; /* Daha koyu bir ton */
+        color: #4a5568; /* Darker tone */
     }
 
-    /* Kart Değer Stili */
+    /* Card Value Style */
     .card h4.text-dark {
         font-size: 1.5rem;
         font-weight: bold;
-        color: #2d3748; /* Modern koyu ton */
+        color: #2d3748; /* Modern dark tone */
     }
 
-    /* Kart Gradyan Efektleri */
+    /* Card Gradient Effects */
     .card-body {
         display: flex;
         flex-direction: column;
@@ -50,7 +49,7 @@
         margin-bottom: 30px;
     }
 
-    /* Konteyner için Esneklik */
+    /* Container Flexibility */
     .container {
         max-width: 1200px;
         margin: auto;
@@ -58,12 +57,12 @@
 </style>
 
 <div class="container">
-    <!-- 1. Satır -->
+    <!-- Row 1 -->
     <div class="row">
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Ürün Sayısı</h4>
+                    <h4 class="card-title">Product Count</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.products</h4>
                 </div>
             </div>
@@ -71,7 +70,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Rezervasyon Sayısı</h4>
+                    <h4 class="card-title">Reservation Count</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.reservations</h4>
                 </div>
             </div>
@@ -79,7 +78,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Admin Sayısı</h4>
+                    <h4 class="card-title">Admin Count</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.admins</h4>
                 </div>
             </div>
@@ -87,7 +86,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Referans Sayısı</h4>
+                    <h4 class="card-title">Testimonial Count</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.testimonials</h4>
                 </div>
             </div>
@@ -96,12 +95,12 @@
 
     <div class="mb-4"></div>
 
-    <!-- 2. Satır -->
+    <!-- Row 2 -->
     <div class="row">
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Günün Yemekleri Sayısı</h4>
+                    <h4 class="card-title">Daily Deals Count</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.deals</h4>
                 </div>
             </div>
@@ -109,7 +108,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">İptal Edilen Rezervasyonlar</h4>
+                    <h4 class="card-title">Canceled Reservations</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.canceledReservations</h4>
                 </div>
             </div>
@@ -117,7 +116,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Kategori Sayısı</h4>
+                    <h4 class="card-title">Category Count</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.categories</h4>
                 </div>
             </div>
@@ -125,7 +124,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Ana Yemek Sayısı</h4>
+                    <h4 class="card-title">Main Dish Count</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.mainDishes</h4>
                 </div>
             </div>
@@ -134,12 +133,12 @@
 
     <div class="mb-4"></div>
 
-    <!-- 3. Satır -->
+    <!-- Row 3 -->
     <div class="row">
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Abone Sayısı</h4>
+                    <h4 class="card-title">Subscriber Count</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.subscribes</h4>
                 </div>
             </div>
@@ -147,7 +146,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Ortalama Yemek Fiyatı</h4>
+                    <h4 class="card-title">Average Dish Price</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.avgPrice</h4>
                 </div>
             </div>
@@ -155,7 +154,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">En Yüksek Yemek Fiyatı</h4>
+                    <h4 class="card-title">Highest Dish Price</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.maxPrice</h4>
                 </div>
             </div>
@@ -163,7 +162,7 @@
         <div class="col-sm-3 stretch-card d-flex text-center">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Son Eklenen Rezervasyon Saati</h4>
+                    <h4 class="card-title">Last Added Reservation Time</h4>
                     <h4 class="text-dark font-weight-bold mb-2">@ViewBag.lastReserve</h4>
                 </div>
             </div>
