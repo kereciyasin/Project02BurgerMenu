@@ -9,32 +9,32 @@
         <div class="col-md-12">
             <div class="card shadow-lg">
                 <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Yeni Ürün Ekle</h5>
+                    <h5 class="mb-0">Add New Product</h5>
                 </div>
                 <div class="card-body">
                     <form method="post">
                         <div class="mb-3">
-                            <label for="productName" class="form-label">Ürün Adı:</label>
-                            @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control", placeholder = "Ürün adını girin" })
+                            <label for="productName" class="form-label">Product Name:</label>
+                            @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control", placeholder = "Enter product name" })
                         </div>
                         <div class="mb-3">
-                            <label for="productPrice" class="form-label">Ürün Fiyatı:</label>
-                            @Html.TextBoxFor(x => x.ProductPrice, new { @class = "form-control", placeholder = "Ürün fiyatını girin" })
+                            <label for="productPrice" class="form-label">Product Price:</label>
+                            @Html.TextBoxFor(x => x.ProductPrice, new { @class = "form-control", placeholder = "Enter product price" })
                         </div>
                         <div class="mb-3">
-                            <label for="productDescription" class="form-label">Ürün Açıklaması:</label>
-                            @Html.TextBoxFor(x => x.ProductDescription, new { @class = "form-control", placeholder = "Ürün açıklamasını girin" })
+                            <label for="productDescription" class="form-label">Product Description:</label>
+                            @Html.TextBoxFor(x => x.ProductDescription, new { @class = "form-control", placeholder = "Enter product description" })
                         </div>
                         <div class="mb-3">
-                            <label for="imageUrl" class="form-label">Ürün Resmi:</label>
-                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", placeholder = "Resim URL'sini girin" })
+                            <label for="imageUrl" class="form-label">Product Image:</label>
+                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", placeholder = "Enter image URL" })
                         </div>
                         <div class="mb-3">
-                            <label for="category" class="form-label">Kategori:</label>
+                            <label for="category" class="form-label">Category:</label>
                             @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
                         </div>
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-success">Ürün Ekle</button>
+                            <button type="submit" class="btn btn-success">Add Product</button>
                         </div>
                     </form>
                 </div>
