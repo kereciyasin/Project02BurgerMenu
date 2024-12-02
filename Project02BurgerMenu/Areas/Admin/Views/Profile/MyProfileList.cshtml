@@ -8,28 +8,26 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Profil Bilgilerini Düzenleme</h4>
+            <h4 class="card-title">Edit Profile Information</h4>
             <form method="post">
-                <label>Adiniz</label>
+                <label>First Name</label>
                 @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
                 <BR />
-                <label>Soyadiniz</label>
+                <label>Last Name</label>
                 @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
                 <BR />
                 <label>Email</label>
                 @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
                 <BR />
-                <label>Kullanici Adiniz</label>
+                <label>Username</label>
                 @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
                 <BR />
-                <label>Sifre</label>
+                <label>Password</label>
                 @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
                 <BR />
-                <button class="btn btn-primary">Profili Güncelle</button>
+                <button class="btn btn-primary">Update Profile</button>
 
             </form>
         </div>
     </div>
 </div>
-
-
