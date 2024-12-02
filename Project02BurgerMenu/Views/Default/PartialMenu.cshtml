@@ -1,14 +1,14 @@
-﻿﻿@model List<Project02BurgerMenu.Entities.Product>
+﻿@model List<Project02BurgerMenu.Entities.Product>
 @{ Layout = null; int count = 0; }
 
 <section class="site-section" id="section-menu">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center mb-5 site-animate">
-                <h2 class="display-4">Lezzetli Menümüz</h2>
+                <h2 class="display-4">Our Delicious Menu</h2>
                 <div class="row justify-content-center">
                     <div class="col-md-7">
-                        <p class="lead">Birbirinden eşsiz Türk ve Dünya Mutfağı lezzetleri alanında en başarılı aşçılarımızla sizleri bekliyor.</p>
+                        <p class="lead">Unique Turkish and World Cuisine flavors prepared by our most skilled chefs are waiting for you.</p>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
 
                                         <div class="category-products col-md-5 site-animate mb-4" data-category-id="@item.CategoryId">
                                             <div class="media menu-item">
-                                                <img class="mr-3 img-fluid" src="@item.ImageUrl" alt="Ürün resmi">
+                                                <img class="mr-3 img-fluid" src="@item.ImageUrl" alt="Product image">
                                                 <div class="media-body">
                                                     <h5 class="mt-0">@item.ProductName</h5>
                                                     <p>@item.ProductDescription</p>
@@ -41,7 +41,7 @@
                                     {
                                         <div class="category-products col-md-5 site-animate mb-4" data-category-id="@item.CategoryId">
                                             <div class="media menu-item">
-                                                <img class="mr-3 img-fluid" src="@item.ImageUrl" alt="Ürün resmi">
+                                                <img class="mr-3 img-fluid" src="@item.ImageUrl" alt="Product image">
                                                 <div class="media-body">
                                                     <h5 class="mt-0">@item.ProductName</h5>
                                                     <p>@item.ProductDescription</p>

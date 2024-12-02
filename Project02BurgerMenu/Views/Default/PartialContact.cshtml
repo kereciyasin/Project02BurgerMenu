@@ -1,4 +1,4 @@
-﻿﻿@model List<Project02BurgerMenu.Entities.About>
+﻿@model List<Project02BurgerMenu.Entities.About>
 
 <div class="col-md-1"></div>
 
@@ -7,10 +7,9 @@
     <div class="col-md-4 site-animate">
         <p><img src="@item.ImgUrl" alt="" class="img-fluid"></p>
         <p class="text-black">
-            Adres: <br> @item.Address <br> <br>
-            Telefon: <br> @item.Phone <br> <br>
+            Address: <br> @item.Address <br> <br>
+            Phone: <br> @item.Phone <br> <br>
             Email: <br> <a href="mailto:eatwell@info.com">@item.Email</a>
         </p>
-
     </div>
 }

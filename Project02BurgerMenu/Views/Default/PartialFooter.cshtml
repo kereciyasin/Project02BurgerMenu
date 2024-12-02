@@ -1,24 +1,24 @@
-﻿﻿@model Project02BurgerMenu.Entities.Subscribe
+﻿@model Project02BurgerMenu.Entities.Subscribe
 <footer class="site-footer site-bg-dark site-section">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4 site-animate">
-                        <h2 class="site-heading-2">Hakkımızda</h2>
+                        <h2 class="site-heading-2">About Us</h2>
                         <p>@ViewBag.description</p>
                         <br />
-                        @* Subscribe İşlemi*@
+                        @* Subscribe Action *@
                         @using (Html.BeginForm("PartialSubscribe", "Default", FormMethod.Post))
                         {
                             <div class="form-group">
-                                <h2 class="site-heading-2">Bültenİmİze Abone Olun</h2>
+                                <h2 class="site-heading-2">Subscribe to Our Newsletter</h2>
 
-                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control rounded-input", placeholder = "Email Adresiniz" })
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control rounded-input", placeholder = "Your Email Address" })
                                 @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
                             </div>
 
-                            <button type="submit" class="rounded-button" style="rounded-input;">Abone Ol</button>
+                            <button type="submit" class="rounded-button" style="rounded-input;">Subscribe</button>
                         }
                     </div>
 
@@ -28,22 +28,22 @@
                         <div class="site-footer-widget mb-4">
                             <h2 class="site-heading-2">The Restaurant</h2>
                             <ul class="list-unstyled">
-                                <li><a href="/Default#section-about" class="py-2 d-block">Hakkımızda</a></li>
-                                <li><a href="/Default#section-offer" class="py-2 d-block">Öne Çıkanlar</a></li>
-                                <li><a href="/Default#section-gallery" class="py-2 d-block">Galeri</a></li>
-                                <li><a href="/Default#section-contact" class="py-2 d-block">İletişim</a></li>
+                                <li><a href="/Default#section-about" class="py-2 d-block">About Us</a></li>
+                                <li><a href="/Default#section-offer" class="py-2 d-block">Featured</a></li>
+                                <li><a href="/Default#section-gallery" class="py-2 d-block">Gallery</a></li>
+                                <li><a href="/Default#section-contact" class="py-2 d-block">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-2 site-animate">
                         <div class="site-footer-widget mb-4">
-                            <h2 class="site-heading-2">Linkler</h2>
+                            <h2 class="site-heading-2">Links</h2>
                             <ul class="list-unstyled">
-                                <li><a href="#section-menu" class="py-2 d-block">Ana Yemekler</a></li>
-                                <li><a href="#section-menu" class="py-2 d-block">İçecekler</a></li>
-                                <li><a href="#section-menu" class="py-2 d-block">Kahvaltı</a></li>
-                                <li><a href="#section-menu" class="py-2 d-block">Tatlılar</a></li>
-                                <li><a href="#section-menu" class="py-2 d-block">Mezeler</a></li>
+                                <li><a href="#section-menu" class="py-2 d-block">Main Dishes</a></li>
+                                <li><a href="#section-menu" class="py-2 d-block">Drinks</a></li>
+                                <li><a href="#section-menu" class="py-2 d-block">Breakfast</a></li>
+                                <li><a href="#section-menu" class="py-2 d-block">Desserts</a></li>
+                                <li><a href="#section-menu" class="py-2 d-block">Appetizers</a></li>
                             </ul>
                         </div>
                     </div>
@@ -75,24 +75,24 @@
 </footer>
 
 <style>
-    /* Yuvarlak kenarlı input */
+    /* Rounded input field */
     .rounded-input {
-        border-radius: 15px; /* Kenarların yuvarlanma derecesi */
-        border: 1px solid #ccc; /* Kenar çizgisi */
-        padding: 10px; /* İç boşluk */
-        width: 100%; /* Genişliği ayarlar */
+        border-radius: 15px; /* Corner radius */
+        border: 1px solid #ccc; /* Border color */
+        padding: 10px; /* Padding */
+        width: 100%; /* Width adjustment */
     }
 
     .rounded-button {
-        border-radius: 15px; /* Kenarların yuvarlanma derecesi */
-        padding: 10px 20px; /* İç boşluk (yatay ve dikey) */
-        background-color: orange; /* Butonun arka plan rengi */
-        border: none; /* Kenarlık kaldırılır */
-        color: white; /* Yazı rengi */
-        cursor: pointer; /* Buton üzerine gelindiğinde imleç değişimi */
+        border-radius: 15px; /* Corner radius */
+        padding: 10px 20px; /* Padding (horizontal and vertical) */
+        background-color: orange; /* Button background color */
+        border: none; /* Remove border */
+        color: white; /* Text color */
+        cursor: pointer; /* Change cursor when hovered */
     }
 
         .rounded-button:hover {
-            background-color: darkorange; /* Hover durumunda arka plan rengini değiştir */
+            background-color: darkorange; /* Change background color on hover */
         }
 </style>

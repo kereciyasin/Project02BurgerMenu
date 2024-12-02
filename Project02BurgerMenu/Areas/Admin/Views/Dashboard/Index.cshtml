@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
@@ -19,12 +18,16 @@
                 <div class="card-body">
                     <h5 class="card-title text-primary">Ürün Sayısı</h5>
                     <p class="h3 fw-bold text-dark mb-0">@ViewBag.products</p>
+                    <!-- Ürün Sayısı Grafik -->
+                    <canvas id="product-chart" class="mt-4"></canvas>
                 </div>
             </div>
             <div class="card shadow-sm border-0 mt-4">
                 <div class="card-body">
                     <h5 class="card-title text-primary">Rezervasyon Sayısı</h5>
                     <p class="h3 fw-bold text-dark mb-0">@ViewBag.reservations</p>
+                    <!-- Rezervasyon Sayısı Grafik -->
+                    <canvas id="reservation-chart" class="mt-4"></canvas>
                 </div>
             </div>
         </div>
@@ -55,7 +58,8 @@
                         </div>
                     </div>
 
-                    <canvas id="web-audience-metrics-satacked" class="mt-4"></canvas>
+                    <!-- Website Metrikleri - Grafik -->
+                    <canvas id="web-audience-metrics-chart" class="mt-4"></canvas>
                 </div>
             </div>
         </div>
@@ -138,3 +142,89 @@
         </div>
     </div>
 </div>
+
+<!-- Grafik Kütüphanesi (Chart.js) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Ürün Sayısı Grafiği
+    var ctxProduct = document.getElementById('product-chart').getContext('2d');
+    var productChart = new Chart(ctxProduct, {
+        type: 'doughnut',  // Dairesel grafik
+        data: {
+            labels: ['Ürün Sayısı'],
+            datasets: [{
+                data: [@ViewBag.products],  // ViewBag üzerinden gelen ürün sayısı
+                backgroundColor: ['#007bff'],  // Ürün için mavi renk
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return 'Ürün Sayısı: ' + tooltipItem.raw;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Rezervasyon Sayısı Grafiği
+    var ctxReservation = document.getElementById('reservation-chart').getContext('2d');
+    var reservationChart = new Chart(ctxReservation, {
+        type: 'doughnut',  // Dairesel grafik
+        data: {
+            labels: ['Rezervasyon Sayısı'],
+            datasets: [{
+                data: [@ViewBag.reservations],  // ViewBag üzerinden gelen rezervasyon sayısı
+                backgroundColor: ['#ff5733'],  // Rezervasyon için turuncu renk
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return 'Rezervasyon Sayısı: ' + tooltipItem.raw;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Website Metrikleri Grafiği
+    var ctxWebMetrics = document.getElementById('web-audience-metrics-chart').getContext('2d');
+    var webMetricsChart = new Chart(ctxWebMetrics, {
+        type: 'bar',
+        data: {
+            labels: ['Admin', 'Referanslar'],
+            datasets: [{
+                label: 'Metrikler',
+                data: [@ViewBag.admins, @ViewBag.testimonials],  // ViewBag üzerinden gelen admin ve referans verileri
+                backgroundColor: ['#007bff', '#b200ff'],
+                borderColor: ['#007bff', '#b200ff'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

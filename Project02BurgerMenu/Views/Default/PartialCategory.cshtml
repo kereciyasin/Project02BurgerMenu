@@ -1,4 +1,4 @@
-﻿﻿@model List<Project02BurgerMenu.Entities.Category>
+﻿@model List<Project02BurgerMenu.Entities.Category>
 
 <ul class="nav site-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
     @foreach (var item in Model)
@@ -14,22 +14,22 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function showCategory(categoryId, element) {
-        // Tüm kategori ürünlerini gizle
+        // Hide all category products
         $('.category-products').hide();
 
-        // Sadece seçilen kategori ürünlerini göster
+        // Show only the selected category's products
         $('.category-products[data-category-id="' + categoryId + '"]').show();
 
-        // Tüm tabların aktif sınıfını kaldır
+        // Remove the active class from all tabs
         $('.nav-link').removeClass('active');
 
-        // Tıklanan tabı aktif yap
+        // Make the clicked tab active
         $(element).addClass('active');
     }
 
-    // Başlangıçta ilk kategoriyi göster
+    // Show the first category by default
     $(document).ready(function () {
         $('.category-products').hide();
-        $('.category-products[data-category-id="1"]').show(); // İlgili kategori ID'yi 1 olarak varsayalım
+        $('.category-products[data-category-id="1"]').show(); // Assume the category ID to be 1
     });
 </script>
