@@ -7,22 +7,21 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title" Yeni Hakkımızda Girişi></h4>
+            <h4 class="card-title">Update About Us Entry</h4>
 
             <form method="post">
                 @Html.HiddenFor(x => x.AboutId)
-                <label>Üst Başlık</label>
+                <label>Subtitle</label>
                 @Html.TextBoxFor(x => x.AboutTitle, new { @class = "form-control" })
                 <br />
-                <label>Başlık</label>
+                <label>Title</label>
                 @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
                 <br />
-                <label>Açıklama</label>
+                <label>Description</label>
                 @Html.TextAreaFor(x => x.AboutDescription, 10, 2, new { @class = "form-control" })
                 <br />
-                <button class="btn btn-info">Güncelle</button>
+                <button class="btn btn-info">Update</button>
             </form>
         </div>
     </div>
 </div>
-

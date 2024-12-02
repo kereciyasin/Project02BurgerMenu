@@ -1,4 +1,4 @@
-﻿﻿@model List<Project02BurgerMenu.Entities.Category>
+﻿@model List<Project02BurgerMenu.Entities.Category>
 
 <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -7,28 +7,25 @@
                 <div class="row">
                     <div class="col-lg-12 p-5">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <small>Vazgeç </small><span aria-hidden="true">&times;</span>
+                            <small>Cancel</small><span aria-hidden="true">&times;</span>
                         </button>
-                        <h1 class="mb-4">Bir Kategori Ekleyin</h1>
+                        <h1 class="mb-4">Add a Category</h1>
                         <form method="post" action="@Url.Action("PartialCategoryAdd", "AdminLayout", new { area = "Admin" })">
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <label for="m_fname">Kategori Adı</label>
+                                    <label for="m_fname">Category Name</label>
                                     <input type="text" name="CategoryName" class="form-control" id="m_fname">
                                 </div>
-
                             </div>
 
                             <div class="row">
                                 <div class="col-md-3 text-center form-group">
-                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Ekle">
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Add">
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
