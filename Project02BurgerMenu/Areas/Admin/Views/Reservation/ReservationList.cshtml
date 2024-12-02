@@ -6,29 +6,29 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>ReservationList</h2>
+<h2>Reservation List</h2>
 
 <style>
     .btn-fw {
-        /* Sabit genişlik (gerektiğinde artırabilirsiniz) */
-        white-space: nowrap; /* Metni tek satırda tutar */
+        /* Fixed width (can be increased if needed) */
+        white-space: nowrap; /* Keeps text on a single line */
     }
 
     .status-confirmed {
         background-color: rgba(76, 175, 80, 0.2);
         color: #2d572c;
     }
-    /* Onayla: Yumuşak yeşil */
+    /* Confirmed: Soft green */
     .status-pending {
         background-color: rgba(255, 193, 7, 0.2);
         color: #a37705;
     }
-    /* Bekliyor: Yumuşak sarı */
+    /* Pending: Soft yellow */
     .status-not-arrived {
         background-color: rgba(108, 117, 125, 0.2);
         color: #545b62;
     }
-    /* Gelmedi: Yumuşak gri */
+    /* Not Arrived: Soft gray */
     .status-canceled {
         background-color: rgba(220, 53, 69, 0.2);
         color: #7d1a24;
@@ -38,7 +38,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Rezervasyon Listesi</h4>
+            <h4 class="card-title">Reservation List</h4>
             <p class="card-description">
             </p>
             <div class="table-responsive">
@@ -46,12 +46,11 @@
                     <thead>
                         <tr>
 
-                            <th>Rezervasyon Sahibi</th>
-                            <th>Tarih</th>
-                            <th>Saat</th>
-                            <th>Durum</th>
+                            <th>Reservation Owner</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
                             <th></th>
-
 
                         </tr>
                     </thead>
@@ -63,23 +62,20 @@
                                 <td>@item.Name @item.Surname </td>
                                 <td>@item.ReservationDate.ToString("dd/MM/yyyy")</td>
                                 <td>@item.Time</td>
-                                <td class="@(item.ReservationStatus == "Onaylandı" ? "status-confirmed" :
-              item.ReservationStatus == "Onay Bekleniyor" ? "status-pending" :
-              item.ReservationStatus == "Müşteri Gelmedi" ? "status-not-arrived" :
+                                <td class="@(item.ReservationStatus == "Confirmed" ? "status-confirmed" :
+              item.ReservationStatus == "Pending" ? "status-pending" :
+              item.ReservationStatus == "Customer Not Arrived" ? "status-not-arrived" :
               "status-canceled")">
                                     @item.ReservationStatus
                                 </td>
 
-                                @*Detaylar*@
+                                @*Details*@
                                 <td><a href="/Admin/Reservation/DetailReservation/@item.ReservationId" type="button" class="btn btn-outline-secondary btn-icon-text"> <i class="mdi mdi-file-check btn-icon-append"></i></a></td>
 
-
-                                <td><a href="/Admin/Reservation/StatusChangeToConfirm/@item.ReservationId" class="btn btn-inverse-primary btn-fw">Onayla</a></td>
-                                <td><a href="/Admin/Reservation/StatusChangeToWaiting/@item.ReservationId" class="btn btn-inverse-info btn-fw">Onayı Beklet</a></td>
-                                <td><a href="/Admin/Reservation/StatusChangeToCome/@item.ReservationId" class="btn btn-inverse-dark btn-fw">Müşteri Gelmedi</a></td>
-                                <td><a href="/Admin/Reservation/StatusChangeToCancel/@item.ReservationId" class="btn btn-inverse-danger btn-fw">İptal Et</a></td>
-
-
+                                <td><a href="/Admin/Reservation/StatusChangeToConfirm/@item.ReservationId" class="btn btn-inverse-primary btn-fw">Confirm</a></td>
+                                <td><a href="/Admin/Reservation/StatusChangeToWaiting/@item.ReservationId" class="btn btn-inverse-info btn-fw">Wait for Approval</a></td>
+                                <td><a href="/Admin/Reservation/StatusChangeToCome/@item.ReservationId" class="btn btn-inverse-dark btn-fw">Customer Not Arrived</a></td>
+                                <td><a href="/Admin/Reservation/StatusChangeToCancel/@item.ReservationId" class="btn btn-inverse-danger btn-fw">Cancel</a></td>
 
                             </tr>
                         }
@@ -91,7 +87,6 @@
                     LiElementClasses = new List<string>
                                 { "page-link"}
                 })
-
 
             </div>
         </div>

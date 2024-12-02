@@ -7,28 +7,28 @@
 <style>
     .input-group {
         display: flex;
-        align-items: stretch; /* Yükseklikleri eşitlemek için */
+        align-items: stretch; /* To match the heights */
     }
 
         .input-group .form-control {
-            margin-right: 5px; /* Aradaki boşluğu ayarlamak için */
+            margin-right: 5px; /* Adjust space between inputs */
         }
 
             .input-group .form-control:last-child {
-                margin-right: 0; /* Son kutunun sağındaki boşluğu kaldır */
+                margin-right: 0; /* Remove space on the last input */
             }
 
     .btn-fw {
-        display: inline-block; /* Butonun kutucuk gibi görünmesini sağlamak için */
-        border-radius: 5px; /* Kenarları yuvarlaklaştırmak için */
-        padding: 10px 20px; /* İç boşluk ayarlamak için */
-        margin-bottom: 30px
+        display: inline-block; /* To make the button look like a box */
+        border-radius: 5px; /* Round corners */
+        padding: 10px 20px; /* Adjust padding */
+        margin-bottom: 30px;
     }
 
     .text-center {
         display: flex;
-        justify-content: center; /* Yatayda ortalar */
-        align-items: center; /* Dikeyde ortalar */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
     }
 </style>
 
@@ -37,7 +37,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Rezervasyon Detayları</h4>
+                <h4 class="card-title">Reservation Details</h4>
                 <p class="card-description"></p>
                 <div class="col-md-12 grid-margin-lg-0 grid-margin stretch-card">
 
@@ -47,14 +47,14 @@
                             <div class="form-group row">
 
                                 <div class="col">
-                                    <label>Rezervasyon ID</label>
+                                    <label>Reservation ID</label>
                                     <div id="the-basics">
                                         @Html.HiddenFor(x => x.ReservationId)
                                         <input class="typeahead" type="text" placeholder="@Html.DisplayFor(x=>x.ReservationId)" readonly>
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label>Rezervasyon Sahibi</label>
+                                    <label>Reservation Owner</label>
                                     <div id="the-basics">
                                         <div class="input-group">
                                             @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
@@ -70,13 +70,13 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label>Telefon</label>
+                                    <label>Phone</label>
                                     <div id="bloodhound">
                                         @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label>Kişi Sayısı</label>
+                                    <label>Number of People</label>
                                     <div id="bloodhound">
                                         @Html.TextBoxFor(x => x.PeopleCount, new { @class = "form-control" })
                                     </div>
@@ -85,14 +85,14 @@
                             </div>
                             <div class="col">
                                 <div class="col">
-                                    <label>Rezervasyon Tarihi</label>
+                                    <label>Reservation Date</label>
                                     <div id="bloodhound">
                                         @Html.TextBoxFor(x => x.ReservationDate, Model.ReservationDate.ToString("dd/MM/yyyy"), new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <br />
                                 <div class="col">
-                                    <label>Rezervasyon Zamanı</label>
+                                    <label>Reservation Time</label>
                                     <div id="bloodhound">
                                         @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
                                     </div>
@@ -101,13 +101,13 @@
 
                                 <br />
                                 <div id="bloodhound" class="col">
-                                    <label>Rezervasyon Mesajı</label>
+                                    <label>Reservation Message</label>
                                     @Html.TextAreaFor(x => x.Message, new { @class = "form-control", rows = 5 })
                                 </div>
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-outline-success btn-fw" style="width: 200px;">Güncelle</button>
+                            <button type="submit" class="btn btn-outline-success btn-fw" style="width: 200px;">Update</button>
                         </div>
                     </div>
 
@@ -122,4 +122,3 @@
     </div>
 
 </form>
-
