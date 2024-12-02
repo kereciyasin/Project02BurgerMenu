@@ -1,24 +1,24 @@
 ﻿@model List<Project02BurgerMenu.Entities.Message>
+
 @{
     ViewBag.Title = "InBox";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
 
-@*//Burada gelen mesajları listeleyeceğiz*@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Gelen Mesajlar Sayfasi</h4>
+            <h4 class="card-title">Incoming Messages Page</h4>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Gönderici</th>
-                            <th>Konu</th>
-                            <th>Tarih</th>
-                            <th>Mesaji Ac</th>
+                            <th>Sender</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Read Message</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,15 +31,17 @@
                                 <td>@item.Title</td>
                                 <td>@item.SendDate.ToShortDateString()</td>
                                 <td>
-                                    <a href="" class="btn btn-primary">Mesaji Ac</a>
+                                    <!-- Link to open the message details -->
+                                    <a href="" class="btn btn-primary">Read Message</a>
                                 </td>
                             </tr>
                         }
+                    </tbody>
                 </table>
-                <a href="/Admin/Message/NewMessage/" class="btn btn-info">Yeni Mesaj Gönderin..</a>
+
+                <!-- Button to send a new message -->
+                <a href="/Admin/Message/NewMessage/" class="btn btn-info">Send New Message..</a>
             </div>
         </div>
     </div>
 </div>
-
-
