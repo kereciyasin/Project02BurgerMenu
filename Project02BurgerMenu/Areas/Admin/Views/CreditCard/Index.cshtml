@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="~/Content/style.css">
 
     <style>
-        /* Genel Tasarım */
+        /* General Design */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -118,7 +118,7 @@
                 border-radius: 5px;
             }
 
-        /* Form Tasarımı */
+        /* Form Design */
         form .inputBox {
             margin-bottom: 15px;
         }
@@ -165,79 +165,97 @@
     <div class="container">
 
         <div class="card-container">
-            <!-- Ön yüz -->
+            <!-- Front side -->
             <div class="front">
                 <div class="image">
-                    <img src="~/img/chip.png" alt="">
-                    <img src="~/img/visa.png" alt="">
+                    <img src="~/regal/regal/images/220.jpg" alt="Chip">
+                    <img src="~/regal/regal/images/image111.png" alt="Visa">
                 </div>
-                <div class="card-number-box">################</div>
+                <div class="card-number-box" id="card-number">################</div>
                 <div class="flexbox">
                     <div class="box">
-                        <span>Kart Sahibi</span>
-                        <div class="card-holder-name">Ad Soyad</div>
+                        <span>Card Holder</span>
+                        <div class="card-holder-name" id="card-holder">Full Name</div>
                     </div>
                     <div class="box">
-                        <span>Son Geçerlilik Tarihi</span>
+                        <span>Expiration Date</span>
                         <div class="expiration">
-                            <span class="exp-month">MM</span> /
-                            <span class="exp-year">YY</span>
+                            <span id="exp-month">MM</span> /
+                            <span id="exp-year">YY</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Arka yüz -->
+            <!-- Back side -->
             <div class="back">
                 <div class="stripe"></div>
                 <div class="box">
                     <span>CVV</span>
-                    <div class="cvv-box"></div>
-                    <img src="~/img/visa.png" alt="">
+                    <div class="cvv-box" id="cvv-box"></div>
+                    <img src="~/img/visa.png" alt="Visa">
                 </div>
             </div>
         </div>
 
         <form action="">
             <div class="inputBox">
-                <span>Kart Numarası</span>
-                <input type="text" id="credit-card" maxlength="19" class="card-number-input">
+                <span>Card Number</span>
+                <input type="text" id="credit-card" maxlength="19" class="card-number-input" oninput="updateCardInfo()">
             </div>
             <div class="inputBox">
-                <span>Kart Sahibi</span>
-                <input type="text" class="card-holder-input">
+                <span>Card Holder</span>
+                <input type="text" class="card-holder-input" oninput="updateCardInfo()">
             </div>
             <div class="flexbox">
                 <div class="inputBox">
-                    <span>Ay</span>
-                    <select class="month-input">
-                        <option value="month" selected disabled>Ay</option>
-                        <!-- Ay seçenekleri -->
+                    <span>Month</span>
+                    <select class="month-input" id="month-input" onchange="updateCardInfo()">
+                        <option value="month" selected disabled>Month</option>
                         <option value="01">01</option>
-                        <!-- diğer aylar -->
+                        <!-- other months -->
                         <option value="12">12</option>
                     </select>
                 </div>
                 <div class="inputBox">
-                    <span>Yıl</span>
-                    <select class="year-input">
-                        <option value="year" selected disabled>Yıl</option>
-                        <!-- Yıl seçenekleri -->
+                    <span>Year</span>
+                    <select class="year-input" id="year-input" onchange="updateCardInfo()">
+                        <option value="year" selected disabled>Year</option>
                         <option value="2030">2030</option>
                     </select>
                 </div>
                 <div class="inputBox">
                     <span>CVV</span>
-                    <input type="text" maxlength="3" class="cvv-input">
+                    <input type="text" maxlength="3" class="cvv-input" id="cvv-input" oninput="updateCardInfo()">
                 </div>
             </div>
-            <input type="submit" value="Kaydet" class="submit-btn">
+            <input type="submit" value="Save" class="submit-btn">
         </form>
 
     </div>
 
     <!-- JavaScript -->
     <script>
-        // JS kodları aynı
+        function updateCardInfo() {
+            // Get values from form inputs
+            var cardNumber = document.getElementById("credit-card").value;
+            var cardHolder = document.querySelector(".card-holder-input").value;
+            var month = document.getElementById("month-input").value;
+            var year = document.getElementById("year-input").value;
+            var cvv = document.getElementById("cvv-input").value;
+
+            // Update card number (formatted with spaces)
+            document.getElementById("card-number").textContent = cardNumber.replace(/\d{4}(?=\d)/g, '$& ').trim() || '################';
+
+            // Update card holder name
+            document.getElementById("card-holder").textContent = cardHolder || 'Full Name';
+
+            // Update expiration month and year
+            document.getElementById("exp-month").textContent = month || 'MM';
+            document.getElementById("exp-year").textContent = year || 'YY';
+
+            // Update CVV
+            document.getElementById("cvv-box").textContent = cvv || '';
+        }
     </script>
 
 </body>
