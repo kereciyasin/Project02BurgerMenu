@@ -8,17 +8,17 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card border-primary">
         <div class="card-body">
-            <h4 class="card-title text-primary">Mesaj Detayları</h4>
-            <p class="card-description text-muted">Bu, kullanıcının gönderdiği mesajın detaylarını içerir.</p>
+            <h4 class="card-title text-primary">Message Details</h4>
+            <p class="card-description text-muted">This section contains the details of the message sent by the user.</p>
 
             <div class="col-md-12 grid-margin-lg-0 grid-margin stretch-card">
                 <div class="card bg-light">
                     <div class="card-body">
-                        <!-- Form Group: Gönderen, Email ve Tarih -->
+                        <!-- Form Group: Sender, Email, and Date -->
                         <div class="form-group row">
-                            <!-- Gönderen -->
+                            <!-- Sender -->
                             <div class="col">
-                                <label class="text-secondary font-weight-bold">Gönderen</label>
+                                <label class="text-secondary font-weight-bold">Sender</label>
                                 <input class="typeahead form-control border-info"
                                        type="text"
                                        placeholder="@Html.DisplayFor(x => x.Name)"
@@ -34,9 +34,9 @@
                                        readonly>
                             </div>
 
-                            <!-- Tarih -->
+                            <!-- Date -->
                             <div class="col">
-                                <label class="text-secondary font-weight-bold">Tarih</label>
+                                <label class="text-secondary font-weight-bold">Date</label>
                                 <input class="typeahead form-control border-info"
                                        type="text"
                                        placeholder="@Model.SendDate.ToString("dd/MM/yyyy")"
@@ -44,9 +44,9 @@
                             </div>
                         </div>
 
-                        <!-- Mesaj Bölümü -->
+                        <!-- Message Section -->
                         <div class="mt-4">
-                            <p class="card-description text-secondary font-weight-bold">Mesaj</p>
+                            <p class="card-description text-secondary font-weight-bold">Message</p>
                             <textarea class="form-control border-info bg-white"
                                       rows="5"
                                       readonly>@Html.DisplayFor(x => x.Message)</textarea>

@@ -9,41 +9,41 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Referans İletişim Kutusu</h4>
+            <h4 class="card-title">Reference Communication Box</h4>
             <p class="card-description">
             </p>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Mesaj ID</th>
-                            <th>Gönderen</th>
-                            <th>Email Adresi</th>
-                            <th>Gönderim Tarihi</th>
-                            <th>Durum</th>
-                            <th>Sil</th>
-                            <th>Mesaj Detayları</th>
+                            @*<th>Message ID</th>*@
+                            <th>Sender</th>
+                            <th>Email Address</th>
+                            <th>Send Date</th>
+                            <th>Status</th>
+                            <th>Delete</th>
+                            <th>Message Details</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.ContactID</td>
+                                @*<td>@item.ContactID</td>*@
                                 <td>@item.Name</td>
                                 <td>@item.Email</td>
                                 <td>@item.SendDate.ToString("dd / MM / yyyy")</td>
                                 @if (item.IsRead == false)
                                 {
-                                    <td><a href="/Admin/Contact/MessageStatusChangeToTrue/@item.ContactID" class="btn btn-inverse-primary btn-fw">Okundu Olarak İşaretle</a></td>
+                                    <td><a href="/Admin/Contact/MessageStatusChangeToTrue/@item.ContactID" class="btn btn-inverse-primary btn-fw">Mark as Read</a></td>
                                 }
                                 else
                                 {
-                                    <td><a href="/Admin/Contact/MessageStatusChangeToFalse/@item.ContactID" class="btn btn-primary">Okunmadı Olarak İşaretle</a></td>
+                                    <td><a href="/Admin/Contact/MessageStatusChangeToFalse/@item.ContactID" class="btn btn-primary">Mark as Unread</a></td>
                                 }
 
-                                <td><a href="/Admin/Contact/DeleteMessage/@item.ContactID" class="btn btn-danger">Sil</a></td>
-                                <td><a href="/Admin/Contact/DetailMessage/@item.ContactID">Detaylar</a></td>
+                                <td><a href="/Admin/Contact/DeleteMessage/@item.ContactID" class="btn btn-danger">Delete</a></td>
+                                <td><a href="/Admin/Contact/DetailMessage/@item.ContactID">Details</a></td>
                             </tr>
                         }
                     </tbody>
@@ -60,8 +60,8 @@
                 var url = $(this).attr('href');
 
                 $.get(url, function () {
-                    // Detay sayfasına gidildiğinde buton güncellenir
-                    $(this).closest('tr').find('.btn-inverse-primary').text('Okundu').removeClass('btn-inverse-primary').addClass('btn-primary');
+                    // The button is updated when navigating to the details page
+                    $(this).closest('tr').find('.btn-inverse-primary').text('Read').removeClass('btn-inverse-primary').addClass('btn-primary');
                 });
             });
         });
