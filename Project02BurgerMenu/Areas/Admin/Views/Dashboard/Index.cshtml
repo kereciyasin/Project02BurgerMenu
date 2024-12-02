@@ -6,42 +6,42 @@
 <div class="container-fluid px-4">
     <div class="row">
         <div class="col-sm-12 mb-4">
-            <h2 class="fw-bold text-dark">Hoş Geldiniz!</h2>
+            <h2 class="fw-bold text-dark">Welcome!</h2>
             <p class="text-muted">@ViewBag.datetime</p>
         </div>
     </div>
 
     <div class="row mt-3 g-4">
-        <!-- Ürün Sayısı ve Rezervasyon Sayısı -->
+        <!-- Product Count and Reservation Count -->
         <div class="col-lg-3">
             <div class="card shadow-sm border-0">
                 <div class="card-body">
-                    <h5 class="card-title text-primary">Ürün Sayısı</h5>
+                    <h5 class="card-title text-primary">Product Count</h5>
                     <p class="h3 fw-bold text-dark mb-0">@ViewBag.products</p>
                     <canvas id="product-chart" class="mt-4"></canvas>
                 </div>
             </div>
             <div class="card shadow-sm border-0 mt-4">
                 <div class="card-body">
-                    <h5 class="card-title text-primary">Rezervasyon Sayısı</h5>
+                    <h5 class="card-title text-primary">Reservation Count</h5>
                     <p class="h3 fw-bold text-dark mb-0">@ViewBag.reservations</p>
                     <canvas id="reservation-chart" class="mt-4"></canvas>
                 </div>
             </div>
         </div>
 
-        <!-- Website Metrikleri -->
+        <!-- Website Metrics -->
         <div class="col-lg-9">
             <div class="card shadow-sm border-0">
                 <div class="card-body">
-                    <h5 class="card-title text-primary">Website Metrikleri</h5>
+                    <h5 class="card-title text-primary">Website Metrics</h5>
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <div class="d-flex align-items-center">
                                 <div class="legend-box me-2" style="background-color: #007bff;"></div>
                                 <div>
                                     <h6 class="fw-bold mb-0">@ViewBag.admins</h6>
-                                    <small class="text-muted">Admin</small>
+                                    <small class="text-muted">Admins</small>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                 <div class="legend-box me-2" style="background-color: #b200ff;"></div>
                                 <div>
                                     <h6 class="fw-bold mb-0">@ViewBag.testimonials</h6>
-                                    <small class="text-muted">Referanslar</small>
+                                    <small class="text-muted">Testimonials</small>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Gradient oluşturma fonksiyonu
+    // Gradient function to create gradients for charts
     function createGradient(ctx, color1, color2) {
         let gradient = ctx.createLinearGradient(0, 0, 0, 400);
         gradient.addColorStop(0, color1);
@@ -73,13 +73,13 @@
         return gradient;
     }
 
-    // Ürün Sayısı Grafiği
+    // Product Count Chart
     var ctxProduct = document.getElementById('product-chart').getContext('2d');
     var productGradient = createGradient(ctxProduct, '#007bff', '#00c6ff');
     var productChart = new Chart(ctxProduct, {
         type: 'doughnut',
         data: {
-            labels: ['Ürün Sayısı'],
+            labels: ['Product Count'],
             datasets: [{
                 data: [@ViewBag.products],
                 backgroundColor: [productGradient],
@@ -102,13 +102,13 @@
         }
     });
 
-    // Rezervasyon Sayısı Grafiği
+    // Reservation Count Chart
     var ctxReservation = document.getElementById('reservation-chart').getContext('2d');
     var reservationGradient = createGradient(ctxReservation, '#ff5733', '#ff8d72');
     var reservationChart = new Chart(ctxReservation, {
         type: 'doughnut',
         data: {
-            labels: ['Rezervasyon Sayısı'],
+            labels: ['Reservation Count'],
             datasets: [{
                 data: [@ViewBag.reservations],
                 backgroundColor: [reservationGradient],
@@ -131,14 +131,14 @@
         }
     });
 
-    // Website Metrikleri Grafiği
+    // Website Metrics Chart
     var ctxWebMetrics = document.getElementById('web-audience-metrics-chart').getContext('2d');
     var adminGradient = createGradient(ctxWebMetrics, '#007bff', '#00c6ff');
     var testimonialGradient = createGradient(ctxWebMetrics, '#b200ff', '#ff4cf0');
     var webMetricsChart = new Chart(ctxWebMetrics, {
         type: 'bar',
         data: {
-            labels: ['Admin', 'Referanslar'],
+            labels: ['Admins', 'Testimonials'],
             datasets: [{
                 data: [@ViewBag.admins, @ViewBag.testimonials],
                 backgroundColor: [adminGradient, testimonialGradient]
