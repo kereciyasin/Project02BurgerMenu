@@ -1,4 +1,4 @@
-﻿﻿@model Project02BurgerMenu.Entities.Category
+﻿@model Project02BurgerMenu.Entities.Category
 @{
     ViewBag.Title = "UpdateCategory";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
@@ -7,17 +7,16 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title" Yeni Kategori Girişi></h4>
+            <h4 class="card-title">Update Category</h4>
 
             <form method="post">
                 @Html.HiddenFor(x => x.CategoryId)
-                <label>Kategori Adı</label>
+                <label>Category Name</label>
                 @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
                 <br />
 
-                <button class="btn btn-info">Güncelle</button>
+                <button class="btn btn-info">Update</button>
             </form>
         </div>
     </div>
 </div>
-
