@@ -35,10 +35,14 @@ This project is modeled after a restaurant website, offering various features wh
 - 💳 **Credit Card:** Users can save their credit card information.
 
 ### Admin Images:
-![Admin Image 1](path/to/image1.jpg)  
-![Admin Image 2](path/to/image2.jpg)  
-![Admin Image 3](path/to/image3.jpg)  
-![Admin Image 4](path/to/image4.jpg)  
+![Admin Image 1](/Screenshot/021.png)  
+![Admin Image 2](/Screenshot/022.png)  
+![Admin Image 2](/Screenshot/023.png)  
+![Admin Image 2](/Screenshot/024.png)  
+![Admin Image 2](/Screenshot/025.png)  
+![Admin Image 2](/Screenshot/026.png)  
+![Admin Image 2](/Screenshot/027.png)  
+
 
 ---
 
