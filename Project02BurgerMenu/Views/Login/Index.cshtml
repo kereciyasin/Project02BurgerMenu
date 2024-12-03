@@ -4,46 +4,147 @@
 }
 
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Burger Admin Giriş Sayfası</title>
+    <title>Regal Admin Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #f74d73, #f78f48);
+            color: #ffffff;
+            padding: 24px 20px;
+            text-align: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .card-header .logo {
+                font-size: 36px;
+                font-weight: 700;
+                color: #fff;
+                margin-right: 10px;
+            }
+
+            .card-header .icon {
+                font-size: 40px;
+                color: #fff;
+            }
+
+        .card-body {
+            padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .form-control {
+            border-radius: 25px;
+            padding: 18px;
+            font-size: 1.1rem;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+            .form-control:focus {
+                border-color: #f74d73;
+                box-shadow: 0 0 8px rgba(247, 77, 115, 0.5);
+            }
+
+        .btn-primary {
+            background-color: #f74d73;
+            border: none;
+            border-radius: 25px;
+            padding: 18px;
+            font-size: 1.2rem;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #f78f48;
+            }
+
+        .alert {
+            background-color: #f1f8ff;
+            color: #003366;
+            font-size: 1rem;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .text-center a {
+            color: #f74d73;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            .text-center a:hover {
+                text-decoration: underline;
+            }
+    </style>
 </head>
-<body class="bg-secondary">
+<body>
 
-    <!-- Ekranın ortasında formu konumlandırmak için flexbox kullanıyoruz -->
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="card shadow-lg" style="width: 100%; max-width: 450px; border-radius: 15px;">
-            <div class="card-header text-center bg-primary text-white rounded-top">
-                <h4>Burger Admin Giriş</h4>
-            </div>
-            <div class="card-body p-4">
-                <!-- Bilgilendirme mesajı -->
-                <div class="alert alert-info text-center" role="alert">
-                    Giriş yapmak için kullanıcı adınızı ve şifrenizi girin.
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <!-- Regal name and food-related icon -->
+                <div class="logo">Regal</div>
+                <!-- Burger Icon -->
+                <div class="icon">
+                    <i class="fas fa-hamburger"></i> <!-- Burger icon -->
                 </div>
-
-                <!-- Form Başlangıcı -->
+            </div>
+            <div class="card-body">
+                <!-- Form Start -->
                 <form method="post">
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Kullanıcı Adınız:</label>
-                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control form-control-lg", id = "username", placeholder = "Kullanıcı adınızı girin" })
+                    <div class="mb-4">
+                        <label for="username" class="form-label">Your Username</label>
+                        @Html.TextBoxFor(x => x.Username, new { @class = "form-control", id = "username", placeholder = "Enter your username" })
                     </div>
 
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Şifreniz:</label>
-                        @Html.PasswordFor(x => x.Password, new { @class = "form-control form-control-lg", id = "password", placeholder = "Şifrenizi girin" })
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Your Password</label>
+                        @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "password", placeholder = "Enter your password" })
                     </div>
 
-                    <!-- Giriş Butonu -->
-                    <button type="submit" class="btn btn-primary w-100 btn-lg shadow-sm">Giriş Yap</button>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
 
-                <!-- Alt Bilgi -->
-                <div class="text-center mt-3">
-                    <small>Henüz kaydınız yok mu? <a href="#" class="text-decoration-none text-primary">Kayıt Ol</a></small>
+                <div class="text-center mt-4">
+                    <small>Don't have an account yet? <a href="/Register/Index" class="text-decoration-none">Register</a></small>
                 </div>
             </div>
         </div>
