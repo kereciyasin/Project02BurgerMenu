@@ -17,10 +17,6 @@ This project is modeled after a restaurant website, offering various features wh
 ### Login and Register:
 ![User Image 1](/Screenshot/img1.png)
 ![User Image 1](/Screenshot/img2.png) 
-![User Image 2](path/to/image2.jpg)  
-![User Image 3](path/to/image3.jpg)  
-![User Image 4](path/to/image4.jpg)  
-
 ---
 
 ## Admin Side
