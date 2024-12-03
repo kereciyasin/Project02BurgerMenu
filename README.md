@@ -14,8 +14,9 @@ This project is modeled after a restaurant website, offering various features wh
 - 📬 **Contact:** Users can send messages to the admin about the restaurant.
 - 📨 **Newsletter Subscription:** Users can subscribe to the restaurant's newsletter via email.
 
-### User Images:
-![User Image 1](path/to/image1.jpg)  
+### Login and Register:
+![User Image 1](/Screenshot/img1.png)
+![User Image 1](/Screenshot/img2.png) 
 ![User Image 2](path/to/image2.jpg)  
 ![User Image 3](path/to/image3.jpg)  
 ![User Image 4](path/to/image4.jpg)  
