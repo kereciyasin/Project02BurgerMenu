@@ -46,7 +46,7 @@ namespace Project02BurgerMenu.Areas.Admin.Controllers
             message.SendDate = DateTime.Now;
             db.Messages.Add(message);
             db.SaveChanges();
-            return RedirectToAction("SendBox", new { area = "Admin" });
+            return RedirectToAction("SendBox","Message", new { area = "Admin" });
         }
     }
 }
